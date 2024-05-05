@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(void) {
 
@@ -11,6 +12,13 @@ int main(void) {
     int i = 0; // counter for how many characters read
     printf("Enter a file name: ");
     while ((ch = getchar()) != '\n') { // get one character at a time
+        if (isspace(ch)) { // Ignore leading spaces
+            if (i == 0) {
+                continue;
+            } else {
+                break;
+            }
+        }
         filename[i++] = ch;
         if (i >= N) { // Check if the input exceeds the buffer size
             printf("Error!\n");
