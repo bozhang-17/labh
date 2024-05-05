@@ -21,12 +21,12 @@ int main(void) {
         }
         filename[i++] = ch;
         if (i >= N) { // Check if the input exceeds the buffer size
-            printf("Error!\n");
+            printf("Error!");
             return EXIT_FAILURE;
         }
     }
     if (i == 0) { // Check if no input was provided
-        printf("Error!\n");
+        printf("Error!");
         return EXIT_FAILURE;
     }
     filename[i] = '\0'; // Null terminate the string
@@ -34,12 +34,12 @@ int main(void) {
     // Find the last dot in the filename
     char *extension = strrchr(filename, '.');
     if (extension == NULL) { // Check if there is no dot in the filename
-        printf("Error!\n");
+        printf("Error!");
         return EXIT_FAILURE;
     }
 
     // Print the extension including the dot
-    printf("%s\n", extension);
+    printf("%s", extension);
 
     return EXIT_SUCCESS;
 }
